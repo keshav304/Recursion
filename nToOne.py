@@ -4,11 +4,10 @@ def printn(n):
     if n == 1:
         print("1")
     else:
+        # Hypothesis - deciding signature of the function
+        print(n)
         # Induction
         printn(n - 1)
-
-        # Hypothesis
-        print(n)
 
 
 printn(10)
