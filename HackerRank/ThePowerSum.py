@@ -2,25 +2,23 @@
 from math import pow, floor
 
 
-def powerSum(arr, X, N, index=0):
-    # base conditions
-    if X <= 0:
+def powerSum(X, N, counter=1):
+    """
+    counter is kind of iterative value for which we are checking if solution is
+    possible for this value and subtraction is to reduce computation and divide it 
+    to subproblems as much as possible because that particular value is going to be 
+    checked in next recursion call
+    """
+    if pow(index,N)<X:
+        return powerSum(X,N,index+1)+powerSum(X-pow(index,N),N,index+1)
+    elif pow(index,N)==X:
         return 1
-    #return 0 if index goes out of range of arr
-    if index >= len(arr):
-        return 0
     
-    ways = powerSum(arr, X, N, index + 1) + powerSum(arr, (X - pow(arr[index], N)), N, index + 1)
-           #if the element is not added     #if the element is added
-    return ways
+    else:
+        return 0
 
 
 X = int(input("Enter X"))
 N = int(input("Enter N"))
-arr = []
-limit = floor(pow(X, 1 / N))
-# the numbers whose powers is taken will less the Nth root Of X
-for i in range(1, limit + 1):
-    arr.append(i)
-no_of_ways = powerSum(arr, X, N)
+no_of_ways = powerSum(X, N)
 print("No of ways", no_of_ways)
