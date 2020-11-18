@@ -2,7 +2,7 @@
 from math import pow, floor
 
 
-def powerSum(arr, X, N, index):
+def powerSum(arr, X, N, index=0):
     # base conditions
     if X <= 0:
         return 1
@@ -22,5 +22,5 @@ limit = floor(pow(X, 1 / N))
 # the numbers whose powers is taken will less the Nth root Of X
 for i in range(1, limit + 1):
     arr.append(i)
-no_of_ways = powerSum(arr, X, N, index=0)
+no_of_ways = powerSum(arr, X, N)
 print("No of ways", no_of_ways)
