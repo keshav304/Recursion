@@ -1,4 +1,4 @@
-# printing factorial of a number
+# printing out factorial of a number
 def fact(n):
     if n == 1:
         return 1
