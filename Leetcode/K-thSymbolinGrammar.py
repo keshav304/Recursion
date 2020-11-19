@@ -1,4 +1,4 @@
-question: https://leetcode.com/problems/k-th-symbol-in-grammar/submissions/
+# question: https://leetcode.com/problems/k-th-symbol-in-grammar/submissions/
 
 class Solution:
     def kthGrammar(self, N: int, K: int) -> int:
